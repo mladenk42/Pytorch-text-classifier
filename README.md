@@ -2,8 +2,8 @@
 Implementation of text classification in pytorch using CNN/GRU/LSTM.
 
 This is an in-progress implementation. It is fully functional, but  many of the settings are 
-currently hard-coded and it needs some serious refactoring. I was learning pytorch through
-writing this code, so, in retrospect, there definitely are parts I should have written differently.
+currently hard-coded and it needs some serious refactoring before it can be reasonably useful to
+the community. I was learning pytorch through writing this code, so, in retrospect, there definitely are parts I should have written differently.
 
 Instructions to run the code (to be executed from the project root folder):
 1) unpack the demo_data archive, this will cause a ./demo_data folder with some files to appear
