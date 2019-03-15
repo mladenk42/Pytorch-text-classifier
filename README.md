@@ -48,3 +48,9 @@ Some functionalities supported by the code (albeit for now in a very hacky non u
 - using RNN as the encoder to get text representations (LSTM or GRU, optionally bidirectional, number of units in the cell/hidden state is a hyperparameter, for now with 1 layer but this is easily changed in pytorch)
 - using CNN as the encoder, for now all filters need to be of the same width, width and number of filters are hyperparams
 - fine tuning the classification threshold to be different than the standard 0.5 in order to maximize F1 on an extremely unbalanced test set if the train data was balanced, this functionality is not used in the demo
+
+Data format:
+- vocab.pickle -- python dictionary mapping string to int i.e. word to index, index 0 is reserved for padding but should be present in the dictionary and associated with a generic unused word for the key, such as "<PADDING_TOKEN>"
+- embedding_weights.pt -- pytorch 2D tensor of size num_words X embedding_dim, rows are words, columns are embedding vectors, row i contains the embedding for word that is mapped to index i by the vocab. Row 0 should contain a zero vector and is used for padding
+- (train/dev/test)_data_balanced.pickle -- python list, each element is a 1D torch tensor containing a sequence of words represented by their indexes from vocab (the tensors need not all be the same length, the code will handle the padding)
+- (train/dev/test)_labels.pt -- 1D torch tensor of the same length as the number of elements in the previous described file, each element is 1 (positive class) or 0 (negative class). Multiclass labels should also thoretically work, but this has not been tested
