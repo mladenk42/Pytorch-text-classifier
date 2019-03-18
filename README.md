@@ -15,7 +15,7 @@ Instructions to run the code (to be executed from the project root folder):
    virtualenv -p python3 env
    source ./env/bin/activate
    pip3 install requirements.txt
-   ```bash
+   ```
 3) run the model on the demo data (to run much faster on GPU, set the use_GPU variable near the top of the code to True)
    ```bash
    python3 ./model/run_model.py ./demo_data/
